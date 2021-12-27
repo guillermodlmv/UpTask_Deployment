@@ -1,10 +1,9 @@
 const { Sequelize } = require('sequelize');
-
-
-const db = new Sequelize(`postgres://postgres:Iso4144.@localhost:5432/uptasknode`, {
+require('dotenv').config({path:'variables.env'})
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_NOMBRE } = process.env;
+const db = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NOMBRE}`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
-
 
 module.exports = db 
