@@ -1,26 +1,51 @@
 {
-  "name": "notes.app",
+  "name": "uptasknode",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto UpTask",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "start": "concurrently \"npm run dev\" \"npm run watch\" ",
+    "dev": "nodemon ./index.js",
+    "watch": "webpack -w --mode development"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guillermodlmv/TaskApp.git"
+  },
+  "author": "Guillermo De La Mora",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guillermodlmv/TaskApp/issues"
+  },
+  "homepage": "https://github.com/guillermodlmv/TaskApp#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
+    "axios": "^0.24.0",
+    "bcrypt-nodejs": "^0.0.3",
+    "concurrently": "^6.4.0",
     "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.1",
-    "express-handlebars": "^6.0.2",
     "express-session": "^1.17.2",
-    "method-override": "^3.0.0",
-    "mongoose": "^6.1.1",
-    "passport": "^0.5.0",
-    "passport-local": "^1.0.0"
+    "express-validator": "^6.14.0",
+    "html-to-text": "^8.1.0",
+    "juice": "^8.0.0",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.2",
+    "passport": "^0.5.2",
+    "passport-local": "^1.0.0",
+    "pg": "^8.7.1",
+    "pug": "^3.0.2",
+    "sequelize": "^6.12.0-beta.3",
+    "shortid": "^2.2.16",
+    "slug": "^5.1.1",
+    "sweetalert2": "^11.3.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "babel-loader": "^8.2.3",
+    "nodemon": "^2.0.15",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
   }
 }
