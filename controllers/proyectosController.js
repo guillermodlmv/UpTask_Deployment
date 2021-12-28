@@ -72,7 +72,7 @@ exports.proyectoPorUrl = async (req, res, next) => {
         }]
     });
 
-    // console.log(tareas)
+    console.log(proyecto, proyectos, proyecto)
 
     if(!proyecto) return next()
     res.render('tareas', {
@@ -94,7 +94,7 @@ exports.fomularioEditar = async (req, res, next) => {
             usuarioId
         }
     });
-    console.log(proyecto)
+    console.log(proyecto, proyectos, proyecto)
 
     res.render('nuevoProyecto', {
         nombrePagina: 'Editar Proyecto',
