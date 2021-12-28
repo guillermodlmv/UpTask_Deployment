@@ -55,14 +55,12 @@ exports.nuevoProyecto = async (req, res, next) => {
 
 exports.proyectoPorUrl = async (req, res, next) => {
     const usuarioId = res.locals.usuario.id
-    const proyectosPromise =  Proyectos.findAll({where: { usuarioId }});
-    const proyectoPromise =  Proyectos.findOne({
+    const proyectos = await Proyectos.findAll({where: { usuarioId }});
+    const proyecto = await Proyectos.findOne({
         where: { 
             url: req.params.url
         }
     });
-
-    const [proyectos, proyecto] = await Promise.all([proyectosPromise, proyectoPromise])
 
     const tareas = await Tareas.findAll({
         where:{
