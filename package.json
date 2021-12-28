@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js",
-    "start": "concurrently \"npm run dev \" \"npm run watch \" ",
+    "start": "node ./index.js",
     "watch": "webpack --w --mode development"
   },
   "author": "Juan De la torre Valdez",
