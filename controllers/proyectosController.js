@@ -88,8 +88,8 @@ exports.proyectoPorUrl = async (req, res, next) => {
 exports.fomularioEditar = async (req, res, next) => {
     //render a la vista
     const usuarioId = res.locals.usuario.id
-    const proyectosPromise =  Proyectos.findAll({where: { usuarioId }});
-    const proyectoPromise =  Proyectos.findOne({
+    const proyectosPromise = await Proyectos.findAll({where: { usuarioId }});
+    const proyectoPromise = await Proyectos.findOne({
         where: { 
             id: req.params.id,
             usuarioId
