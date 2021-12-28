@@ -1,5 +1,5 @@
 const Tareas = require('../models/Tareas')
-const Proyectos = require('../models/proyectos')
+const Proyectos = require('../models/Proyectos')
 
 exports.agregarTarea = async(req, res, next) =>{
     const proyecto = await Proyectos.findOne({
