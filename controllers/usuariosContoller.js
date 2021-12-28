@@ -59,7 +59,7 @@ exports.crearCuenta = async (req, res) => {
 }
 
 exports.formRestablecerPassword = (req, res) => {
-    res.render('reestablecer', {
+    res.render('restablecer', {
         nombrePagina: 'Reestablecer tu Contraseña'
     })
 }
