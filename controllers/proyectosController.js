@@ -87,6 +87,7 @@ exports.proyectoPorUrl = async (req, res, next) => {
 
 exports.fomularioEditar = async (req, res, next) => {
     //render a la vista
+    console.log(req.params)
     const usuarioId = res.locals.usuario.id
     const proyectos = await Proyectos.findAll({where: { usuarioId }});
     const proyecto = await Proyectos.findOne({
@@ -95,7 +96,7 @@ exports.fomularioEditar = async (req, res, next) => {
             usuarioId
         }
     });
-
+    console.log(proyecto)
 
     res.render('nuevoProyecto', {
         nombrePagina: 'Editar Proyecto',
