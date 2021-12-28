@@ -45,7 +45,7 @@ exports.nuevoProyecto = async (req, res, next) => {
         })
     }else{
         const usuarioId = res.locals.usuario.id
-        Proyectos.create({
+        await Proyectos.create({
             nombre,
             usuarioId
         })
