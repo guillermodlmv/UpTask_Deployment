@@ -19,7 +19,7 @@ exports.formIniciarSesion = (req, res) => {
 exports.crearCuenta = async (req, res) => {
     // leer los datos
     const { email, password} = req.body;
-
+    console.log(email, password)
     try {
         // crear el usuario
         await Usuarios.create({
@@ -46,8 +46,8 @@ exports.crearCuenta = async (req, res) => {
         // redirigir al usuario
         req.flash('correcto', 'Enviamos un correo, confirma tu cuenta');
         res.redirect('/iniciar-sesion');
-        res.send('done')
     } catch (error) {
+        console.log(error)
         req.flash('error', error.map(error => error.message));
         res.render('crearCuenta', {
             mensajes: req.flash(),
