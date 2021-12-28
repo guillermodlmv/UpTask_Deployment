@@ -4,7 +4,7 @@
   "description": "Proyecto UpTask",
   "main": "index.js",
   "scripts": {
-    "desarrollo":"concurrently \"npm run dev\" \"npm run watch\" ",
+    "desarrollo": "concurrently \"npm run dev\" \"npm run watch\" ",
     "start": "node ./index.js",
     "dev": "nodemon ./index.js",
     "watch": "webpack -w --mode development"
@@ -29,6 +29,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "express-validator": "^6.14.0",
+    "heroku": "^7.59.2",
     "html-to-text": "^8.1.0",
     "juice": "^8.0.0",
     "mysql2": "^2.3.3",
