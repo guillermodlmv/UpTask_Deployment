@@ -46,6 +46,7 @@ exports.crearCuenta = async (req, res) => {
         // redirigir al usuario
         req.flash('correcto', 'Enviamos un correo, confirma tu cuenta');
         res.redirect('/iniciar-sesion');
+        res.send('done')
     } catch (error) {
         req.flash('error', error.map(error => error.message));
         res.render('crearCuenta', {
