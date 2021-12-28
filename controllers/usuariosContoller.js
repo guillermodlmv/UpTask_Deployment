@@ -46,7 +46,7 @@ exports.crearCuenta = async(req, res) => {
         if(error.parent){
             parseInt(error.parent.code) === 23505 ? err.push('Usuario ya registrado') : 0
         }
-        if(error.errors.length > 0){
+        if(error.errors){
             err.push(error.errors[0].message)
         }
         req.flash('error', err.map(error => error))
