@@ -64,15 +64,14 @@ exports.proyectoPorUrl = async (req, res, next) => {
 
     const tareas = await Tareas.findAll({
         where:{
-            proyectoId : proyecto.id,
-            usuarioId
+            proyectoId : proyecto.id
         },
         include:[{
             model:Proyectos
         }]
     });
 
-    console.log(proyecto, proyectos, proyecto)
+    // console.log(proyecto, proyectos, proyecto)
 
     if(!proyecto) return next()
     res.render('tareas', {
