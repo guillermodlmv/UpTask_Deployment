@@ -88,15 +88,15 @@ exports.proyectoPorUrl = async (req, res, next) => {
 exports.fomularioEditar = async (req, res, next) => {
     //render a la vista
     const usuarioId = res.locals.usuario.id
-    const proyectosPromise = await Proyectos.findAll({where: { usuarioId }});
-    const proyectoPromise = await Proyectos.findOne({
+    const proyectos = await Proyectos.findAll({where: { usuarioId }});
+    const proyecto = await Proyectos.findOne({
         where: { 
             id: req.params.id,
             usuarioId
         }
     });
 
-    const [proyectos, proyecto] = await Promise.all([proyectosPromise, proyectoPromise])
+
     res.render('nuevoProyecto', {
         nombrePagina: 'Editar Proyecto',
         proyectos,
