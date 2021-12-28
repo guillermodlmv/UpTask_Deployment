@@ -69,7 +69,7 @@ module.exports = function () {
 
     router.get('/cerrar-sesion/', authContoller.cerrarSesion);
 
-    router.get('/reestablecer', usuariosContoller.formReestablecerPassword);
+    router.get('/reestablecer', usuariosContoller.formRestablecerPassword);
     router.post('/reestablecer', authContoller.enviarToken);
     router.get('/reestablecer/:token', authContoller.validarToken);
     router.post('/reestablecer/:token', authContoller.actualizarPassword);
